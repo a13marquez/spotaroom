@@ -1,0 +1,41 @@
+.header {
+  background-color: #D2D2D2; 
+  width:  100vw;
+  height: 100px;
+  padding: 20px 15px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  .contact {
+    padding: 10px 15px;
+    width: 30%;
+    height: 100%;
+    a {
+      font-size: 15px;
+      text-decoration: none;
+    }
+  }
+
+  @media (min-width: '320px') {
+    height: 40px;
+    font-size: 20px;
+    .contact {
+      display: none;
+    }
+  }
+  @media (min-width: '900px') {
+    font-size: 40px;
+    .contact {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      a {
+        font-size: 25px;
+      }
+    }
+  }
+}
