@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import './room.scss';
 
 export const Room = ({img, title, price, currency}) => (
@@ -19,4 +21,11 @@ export const Room = ({img, title, price, currency}) => (
       </div>
     </div>
   </div>
-) 
+);
+
+Room.propTypes = {
+  img: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  currency: PropTypes.string.isRequired,
+}

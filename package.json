@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"parcel src/index.html\" \"node src/api/index.js\"",
+    "build": "parcel build src/index.html",
     "test": "jest"
   },
   "author": "Alvaro Marquez",
@@ -18,7 +19,14 @@
     "styled-components": "^4.3.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.8.0",
     "concurrently": "^4.1.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "jest": "^24.8.0",
     "parcel-bundler": "^1.12.3",
     "sass": "^1.22.9"
   }

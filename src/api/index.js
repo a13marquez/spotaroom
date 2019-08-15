@@ -10,7 +10,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
 app.get('/api/homecards', (appReq, appRes) => {
   let idsRequestBuffers = []
   https.get('https://frontend-interview.spotahome.com/api/public/listings/search/markers/madrid', 
