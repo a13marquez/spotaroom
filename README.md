@@ -33,4 +33,6 @@ configuration, also having limited time I don't want to spend
 a lot of it configuring Webpack.
 Another decision I took was not adding lots of unit test, I think
 there is few test I can do on the front end, and to be honest I wasn't really
-sure how to test the Nodejs part. I created a config for testint
+sure how to test the Nodejs part. I created a config for testing using Jest and
+Enzyme, which also did me add a .babelrc file. I would like to add eslint for 
+the project, but I did no have time.
