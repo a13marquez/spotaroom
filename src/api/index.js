@@ -2,6 +2,14 @@ var express = require('express');
 var app = express();
 const https = require('https');
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+  res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+  next();
+});
+
 
 app.get('/api/homecards', (appReq, appRes) => {
   let idsRequestBuffers = []
@@ -24,10 +32,10 @@ app.get('/api/homecards', (appReq, appRes) => {
               });
               homeCardsResponse.on('end', () => {
                 if(homeCardsResponse.statusCode === 200) {
-                  const homeCardsBuffer = Buffer.concat(buff);
+                  const homeCardsBuffer = Buffer.concat(homeCardsBuffers);
                   const homecards = JSON.parse(homeCardsBuffer.toString())
                     .data.homecards
-                  res.send(homecards)
+                  appRes.send(homecards)
                 }
               })
             })
